@@ -20,8 +20,8 @@ export type itemType = {
 const url = 'https://fakestoreapi.com/products';
 
 // Grabbing the products from the fake store api
-const getProducts = async (): Promise<itemType[]> => await (await fetch(url)).json();
-
+const getProducts = async (): Promise<itemType[]> =>
+  await (await fetch(url)).json();
 
 const handleAddItemToTheCart = (itemClickedOn: itemType) => {};
 
@@ -35,10 +35,9 @@ const Home = () => {
 
   return (
     <div>
-      <Grid container columns={12} spacing={5}>
-        
+      <Grid container columns={8} spacing={10} className='card-wrapper'>
         {data?.map((item) => (
-          <Grid item key={item.id} xs={12} sm={4} >
+          <Grid item key={item.id} xs={12} sm={4} height='100'>
             <CardItem
               item={item}
               handleAddItemToTheCart={handleAddItemToTheCart}

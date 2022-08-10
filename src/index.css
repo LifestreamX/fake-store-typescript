@@ -3,6 +3,57 @@
 }
 
 /* CardItem styles */
+
+
+body {
+  background-color: #1b2530;
+}
+
+/* Home */
+.card-wrapper{
+  width: 1000px !important;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+
+/* Card Item  */
+.card{
+  height:900px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+.images {
+  width: 50% !important;
+  position: relative;
+  bottom: 3rem;
+}
+
 .price-text {
   margin-top: 1rem !important;
+  font-size: 1.3rem !important;
 }
+
+
+
+.button-wrapper{
+  position: absolute;
+  margin-top: 800px;
+  
+}
+
+.purchase-button{
+  height: 50px;
+  width: 150px;
+  font-size: 1.2rem !important;
+
+ 
+}
+

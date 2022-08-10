@@ -14,30 +14,32 @@ type Props = {
 };
 
 const CardItem: React.FC<Props> = ({ item, handleAddItemToTheCart }) => (
-  <Card sx={{ maxWidth: 345 }}>
+  <Card   className='card'>
     <CardMedia
       component='img'
-      height='140'
       image={item.image}
+      style={{ backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}
       alt='green iguana'
+      className='images'
     />
     <CardContent>
       <Typography gutterBottom variant='h5' component='div'>
         {item.title}
       </Typography>
-      <Typography variant='body2' color='text.secondary'>
+      <Typography variant='body2' color='text.secondary' style={{marginBottom:30, marginTop: 30}}>
         {item.description}
       </Typography>
       <Typography variant='body2' color='text.secondary' className='price-text'>
         Price: {<b>${item.price}</b>}
       </Typography>
     </CardContent>
-    <CardActions>
+    <CardActions className='button-wrapper'>
       <Button
         size='small'
         variant='outlined'
         color='success'
         onClick={() => handleAddItemToTheCart(item)}
+        className='purchase-button'
       >
         Purchase
       </Button>
