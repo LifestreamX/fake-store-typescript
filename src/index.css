@@ -2,25 +2,57 @@
   box-sizing: border-box;
 }
 
-/* CardItem styles */
+/* App */
+.components-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
 
+/* Header */
+.shop-wrapper {
+  background-color: #fff;
+  height: 50px;
+  width: 80%;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.3rem;
+}
+
+.shop-wrapper h1 {
+  font-size: 3rem;
+}
 
 body {
   background-color: #1b2530;
 }
 
-/* Home */
-.card-wrapper{
-  width: 1000px !important;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+/* Loading */
+.loading-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 40%;
 }
 
+.spinner {
+  width: 500px !important;
+}
+
+/* Home */
+
+/* Shopping Cart */
+.shopping-cart {
+  position: absolute !important;
+  right: 3rem;
+}
 
 /* Card Item  */
-.card{
-  height:900px !important;
+.card {
+  height: 900px !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +60,6 @@ body {
   margin-top: 50px;
   margin-bottom: 50px;
 }
-
 
 .images {
   width: 50% !important;
@@ -41,19 +72,13 @@ body {
   font-size: 1.3rem !important;
 }
 
-
-
-.button-wrapper{
+.button-wrapper {
   position: absolute;
   margin-top: 800px;
-  
 }
 
-.purchase-button{
+.purchase-button {
   height: 50px;
   width: 150px;
   font-size: 1.2rem !important;
-
- 
 }
-
