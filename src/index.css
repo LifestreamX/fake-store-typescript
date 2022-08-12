@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700;800&display=swap');
+
+
 * {
   box-sizing: border-box;
+  font-family: 'Kanit', sans-serif;
+
 }
 
 /* App */
@@ -21,6 +26,12 @@
   justify-content: center;
   align-items: center;
   padding: 2.3rem;
+}
+
+.title-icon {
+  width: 70px;
+  margin-right: 2rem;
+  padding: .2rem;
 }
 
 .shop-wrapper h1 {
@@ -82,3 +93,18 @@ body {
   width: 150px;
   font-size: 1.2rem !important;
 }
+
+/* Cart Component */
+.cart-wrapper {
+  margin-left: 50px;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* Cart item */
+

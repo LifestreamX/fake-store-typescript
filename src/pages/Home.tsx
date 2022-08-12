@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import { grey } from '@mui/material/colors';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Cart from '../components/Cart';
 
 // xs, extra-small: 0px
 // sm, small: 600px
@@ -35,7 +36,13 @@ const url = 'https://fakestoreapi.com/products';
 const getProducts = async (): Promise<itemType[]> =>
   await (await fetch(url)).json();
 
+// Adding a item to the cart
 const handleAddItemToTheCart = (itemClickedOn: itemType) => {};
+
+// Removing a item from the cart
+const handleRemoveItemFromTheCart = () => {
+  return null;
+};
 
 // Iterate through all the items in the cart and add up the amount
 const getItemCount = (items: itemType[]) => {
@@ -70,7 +77,11 @@ const Home = () => {
         open={isCartOpen}
         onClose={() => setIsCartOpen(false)}
       >
-        Where my cart is going
+        <Cart
+          itemsInCart={itemsInCart}
+          handleAddItemToTheCart={handleAddItemToTheCart}
+          handleRemoveItemFromTheCart={handleRemoveItemFromTheCart}
+        />
       </Drawer>
 
       {/* Items for sale */}
