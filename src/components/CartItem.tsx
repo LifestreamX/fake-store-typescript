@@ -14,16 +14,22 @@ const CartItem: React.FC<Props> = ({
   handleRemoveItemFromTheCart,
 }) => {
   return (
-    <main>
+    <main className='cart-item-wrapper'>
+
       <h3>{item.title}</h3>
-      <div className='price-total-wrapper'>
-        <p>Price: </p>
-        <p>Total: </p>
+      <div className='price-img-wrapper'>
+        <div className='price-total-wrapper'>
+          <p>Price: ${item.price}</p>
+          <p>Total: ${(item.amount * item.price).toFixed(2)}</p>
+        </div>
+        <img src={item.image} alt={item.title} className='cart-image' />
       </div>
+
       <div className='cart-buttons'>
         <Button
           variant='contained'
           onClick={() => handleRemoveItemFromTheCart(item.id)}
+          className='cart-button'
         >
           -
         </Button>
@@ -31,11 +37,13 @@ const CartItem: React.FC<Props> = ({
         <Button
           variant='contained'
           onClick={() => handleAddItemToTheCart(item)}
+          className='cart-button'
+
         >
           +
         </Button>
       </div>
-      <img src={item.image} alt={item.title} />
+      <hr style={{ marginTop: 50 }} />
     </main>
   );
 };

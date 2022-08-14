@@ -36,19 +36,6 @@ const url = 'https://fakestoreapi.com/products';
 const getProducts = async (): Promise<itemType[]> =>
   await (await fetch(url)).json();
 
-// Adding a item to the cart
-const handleAddItemToTheCart = (itemClickedOn: itemType) => {};
-
-// Removing a item from the cart
-const handleRemoveItemFromTheCart = () => {
-  return null;
-};
-
-// Iterate through all the items in the cart and add up the amount
-const getItemCount = (items: itemType[]) => {
-  return items.reduce((acc: number, item) => acc + item.amount, 0);
-};
-
 const Home = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [itemsInCart, setItemsInCart] = useState([] as itemType[]);
@@ -56,6 +43,45 @@ const Home = () => {
     ['products'],
     getProducts
   );
+
+  // Adding a item to the cart
+  const handleAddItemToTheCart = (clickedItem: itemType) => {
+    setItemsInCart((items) => {
+      // Logic for if the item is already in the cart
+      const itemIsInCartAlready = items.find(
+        (item) => item.id === clickedItem.id
+      );
+
+      if (itemIsInCartAlready) {
+        return items.map((item) =>
+          item.id === clickedItem.id
+            ? { ...item, amount: item.amount + 1 }
+            : item
+        );
+      }
+      // Logic for if the its first time the item is being added to cart
+      return [...items, { ...clickedItem, amount: 1 }];
+    });
+  };
+
+  // Removing a item from the cart
+  const handleRemoveItemFromTheCart = (id: number) => {
+    setItemsInCart((items) =>
+      items.reduce((acc, item) => {
+        if (item.id === id) {
+          if (item.amount === 1) return acc;
+          return [...acc, { ...item, amount: item.amount - 1 }];
+        } else {
+          return [...acc, item];
+        }
+      }, [] as itemType[])
+    );
+  };
+
+  // Iterate through all the items in the cart and add up the amount
+  const getItemCount = (items: itemType[]) => {
+    return items.reduce((acc: number, item) => acc + item.amount, 0);
+  };
 
   return (
     <main>

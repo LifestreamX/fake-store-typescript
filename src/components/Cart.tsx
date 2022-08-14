@@ -13,6 +13,10 @@ const Cart: React.FC<Props> = ({
   handleAddItemToTheCart,
   handleRemoveItemFromTheCart,
 }) => {
+  // Calculate the total cost of items in cart
+  const total = (items: itemType[]) =>
+    items.reduce((acc: number, item) => acc + item.amount * item.price, 0);
+
   return (
     <main className='cart-wrapper'>
       <h1>My Shopping Cart</h1>
@@ -27,6 +31,7 @@ const Cart: React.FC<Props> = ({
           handleRemoveItemFromTheCart={handleRemoveItemFromTheCart}
         />
       ))}
+      <h2>Total: ${total(itemsInCart).toFixed(2)}</h2>
     </main>
   );
 };

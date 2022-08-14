@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700;800&display=swap');
 
-
 * {
   box-sizing: border-box;
   font-family: 'Kanit', sans-serif;
-
 }
 
 /* App */
@@ -31,7 +29,7 @@
 .title-icon {
   width: 70px;
   margin-right: 2rem;
-  padding: .2rem;
+  padding: 0.2rem;
 }
 
 .shop-wrapper h1 {
@@ -59,6 +57,7 @@ body {
 .shopping-cart {
   position: absolute !important;
   right: 3rem;
+  position: fixed !important;
 }
 
 /* Card Item  */
@@ -102,9 +101,37 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* width: 500px; */
 }
 
+/* Cart item component*/
 
+.cart-item-wrapper {
+  width: 300px;
+  margin-bottom: 2rem;
+}
 
-/* Cart item */
+.price-img-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
 
+.price-total-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.cart-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-image {
+  width: 5vw;
+}
+
+.cart-button{
+  font-size: 1.2rem !important;
+}
