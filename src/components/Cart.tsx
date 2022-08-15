@@ -1,24 +1,25 @@
 import React, { useEffect } from 'react';
 import CartItem from './CartItem';
 import { itemType } from '../pages/Home';
+import { Button } from '@mui/material';
+import TransitionsModal from '../components/Modal';
 
 type Props = {
   itemsInCart: itemType[];
   handleAddItemToTheCart: (clickedItem: itemType) => void;
   handleRemoveItemFromTheCart: (id: number) => void;
+  handleClearShoppingCart: (arg0: any) => void;
 };
 
 const Cart: React.FC<Props> = ({
   itemsInCart,
   handleAddItemToTheCart,
   handleRemoveItemFromTheCart,
+  handleClearShoppingCart,
 }) => {
   // Calculate the total cost of items in cart
   const total = (items: itemType[]) =>
     items.reduce((acc: number, item) => acc + item.amount * item.price, 0);
-
-
-    
 
   return (
     <main className='cart-wrapper'>
@@ -35,6 +36,9 @@ const Cart: React.FC<Props> = ({
         />
       ))}
       <h2>Total: ${total(itemsInCart).toFixed(2)}</h2>
+      <div className='clear-cart-button'>
+        <TransitionsModal handleClearShoppingCart={handleClearShoppingCart} />
+      </div>
     </main>
   );
 };

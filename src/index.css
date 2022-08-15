@@ -12,7 +12,6 @@
   align-items: center;
   flex-direction: column;
   margin-top: 2rem;
- 
 }
 
 /* Header */
@@ -145,4 +144,23 @@ body {
 
 .cart-button {
   font-size: 1.2rem !important;
+}
+
+.clear-cart-button {
+  margin-bottom: 2rem;
+}
+
+/* Modal component*/
+.modal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-button-wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 2rem;
 }

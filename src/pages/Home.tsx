@@ -46,10 +46,9 @@ const Home = () => {
     getProducts
   );
 
-  // Local storage getter
   useEffect(() => {
     setItemsInCart(JSON.parse(cartData));
-    console.log(cartData)
+    console.log(cartData);
   }, []);
 
   // Local Storage setter
@@ -75,6 +74,12 @@ const Home = () => {
       // Logic for if the its first time the item is being added to cart
       return [...items, { ...clickedItem, amount: 1 }];
     });
+  };
+
+  // Modal clear shopping cart
+  const handleClearShoppingCart = () => {
+    setItemsInCart([]);
+    console.log('fsf')
   };
 
   // Removing a item from the cart
@@ -120,6 +125,7 @@ const Home = () => {
           itemsInCart={itemsInCart}
           handleAddItemToTheCart={handleAddItemToTheCart}
           handleRemoveItemFromTheCart={handleRemoveItemFromTheCart}
+          handleClearShoppingCart={handleClearShoppingCart}
         />
       </Drawer>
 
