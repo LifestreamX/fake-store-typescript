@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CartItem from './CartItem';
 import { itemType } from '../pages/Home';
 
@@ -16,6 +16,9 @@ const Cart: React.FC<Props> = ({
   // Calculate the total cost of items in cart
   const total = (items: itemType[]) =>
     items.reduce((acc: number, item) => acc + item.amount * item.price, 0);
+
+
+    
 
   return (
     <main className='cart-wrapper'>

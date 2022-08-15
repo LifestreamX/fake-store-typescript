@@ -37,12 +37,25 @@ const getProducts = async (): Promise<itemType[]> =>
   await (await fetch(url)).json();
 
 const Home = () => {
+  const cartData: any = window.localStorage.getItem('cart-info');
+
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [itemsInCart, setItemsInCart] = useState([] as itemType[]);
   const { data, isLoading, error } = useQuery<itemType[]>(
     ['products'],
     getProducts
   );
+
+  // Local storage getter
+  useEffect(() => {
+    setItemsInCart(JSON.parse(cartData));
+    console.log(cartData)
+  }, []);
+
+  // Local Storage setter
+  useEffect(() => {
+    window.localStorage.setItem('cart-info', JSON.stringify(itemsInCart));
+  }, [itemsInCart]);
 
   // Adding a item to the cart
   const handleAddItemToTheCart = (clickedItem: itemType) => {

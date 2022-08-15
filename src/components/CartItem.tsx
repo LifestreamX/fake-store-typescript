@@ -1,5 +1,5 @@
 import { Button } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { itemType } from '../pages/Home';
 
 type Props = {
@@ -8,6 +8,7 @@ type Props = {
   handleRemoveItemFromTheCart: (id: number) => void;
 };
 
+
 const CartItem: React.FC<Props> = ({
   item,
   handleAddItemToTheCart,
@@ -15,7 +16,6 @@ const CartItem: React.FC<Props> = ({
 }) => {
   return (
     <main className='cart-item-wrapper'>
-
       <h3>{item.title}</h3>
       <div className='price-img-wrapper'>
         <div className='price-total-wrapper'>
@@ -38,7 +38,6 @@ const CartItem: React.FC<Props> = ({
           variant='contained'
           onClick={() => handleAddItemToTheCart(item)}
           className='cart-button'
-
         >
           +
         </Button>

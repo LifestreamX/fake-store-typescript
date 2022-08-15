@@ -12,6 +12,7 @@
   align-items: center;
   flex-direction: column;
   margin-top: 2rem;
+ 
 }
 
 /* Header */
@@ -52,6 +53,16 @@ body {
 }
 
 /* Home */
+.pagination-wrapper {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 100px;
+  position: relative;
+  bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* Shopping Cart */
 .shopping-cart {
@@ -132,6 +143,6 @@ body {
   width: 5vw;
 }
 
-.cart-button{
+.cart-button {
   font-size: 1.2rem !important;
 }
