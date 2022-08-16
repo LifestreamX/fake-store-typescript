@@ -3,12 +3,14 @@ import CartItem from './CartItem';
 import { itemType } from '../pages/Home';
 import { Button } from '@mui/material';
 import TransitionsModal from '../components/Modal';
+import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 
 type Props = {
   itemsInCart: itemType[];
   handleAddItemToTheCart: (clickedItem: itemType) => void;
   handleRemoveItemFromTheCart: (id: number) => void;
   handleClearShoppingCart: (arg0: any) => void;
+  setIsCartOpen: (arg0: any) => void;
 };
 
 const Cart: React.FC<Props> = ({
@@ -16,6 +18,7 @@ const Cart: React.FC<Props> = ({
   handleAddItemToTheCart,
   handleRemoveItemFromTheCart,
   handleClearShoppingCart,
+  setIsCartOpen,
 }) => {
   // Calculate the total cost of items in cart
   const total = (items: itemType[]) =>
@@ -23,7 +26,13 @@ const Cart: React.FC<Props> = ({
 
   return (
     <main className='cart-wrapper'>
-      <h1>My Shopping Cart</h1>
+      <div className='title-close-cart-wrapper '>
+        <h1>My Shopping Cart</h1>
+        <RemoveShoppingCartIcon
+          className='cart-close-icon'
+          onClick={() => setIsCartOpen(false)}
+        />
+      </div>
 
       {itemsInCart.length === 0 && <h2>Your Shopping Cart Is Empty</h2>}
 

@@ -111,10 +111,22 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* width: 500px; */
 }
 
 /* Cart item component*/
+
+.title-close-cart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-close-icon {
+  position: relative;
+  left: 2.5rem;
+  font-size: 2rem !important;
+  cursor: pointer;
+}
 
 .cart-item-wrapper {
   width: 300px;
@@ -139,7 +151,7 @@ body {
 }
 
 .cart-image {
-  width: 5vw;
+  width: 25%;
 }
 
 .cart-button {
@@ -163,4 +175,102 @@ body {
   justify-content: space-around;
   width: 100%;
   margin-top: 2rem;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 900px) {
+  /* Shopping Cart */
+  .shopping-cart-icon {
+    color: rgb(255, 140, 0) !important;
+    z-index: 999;
+  }
+
+  .images {
+    width: 45% !important;
+    position: relative;
+    bottom: 3rem;
+  }
+
+  .price-text {
+    margin-top: 1rem !important;
+    font-size: 1.3rem !important;
+  }
+
+  .button-wrapper {
+    position: absolute;
+    margin-top: 800px;
+  }
+
+  .shopping-cart {
+    top: 2rem;
+    position: absolute !important;
+    right: 1rem;
+    position: fixed !important;
+  }
+
+  .purchase-button {
+    height: 40px;
+    width: 100px;
+    font-size: 1rem !important;
+  }
+
+  .price-text {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Card Item  */
+  .card {
+    height: 600px !important;
+  }
+
+  .images {
+    width: 23% !important;
+    position: relative;
+    top: -2rem;
+  }
+
+  .price-text {
+    font-size: 1rem !important;
+  }
+
+  .button-wrapper {
+    position: absolute;
+    margin-top: 530px !important;
+  }
+
+  .shop-wrapper {
+    width: 50%;
+    padding: 0;
+  }
+
+  .shop-wrapper h1 {
+    font-size: 1.3rem;
+    position: relative;
+    right: 1.2rem;
+  }
+
+  .title-icon {
+    width: 40px;
+  }
+
+  .purchase-button {
+    height: 30px !important;
+    width: 90px;
+    font-size: 0.8rem !important;
+  }
+
+  .item-title {
+    font-size: 1rem !important;
+  }
+
+  .item-desc {
+    max-height: 150px;
+    overflow-x: scroll;
+    overflow-x: hidden;
+  }
+
+  /* Shopping cart */
 }

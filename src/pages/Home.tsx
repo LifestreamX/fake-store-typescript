@@ -112,6 +112,7 @@ const Home = () => {
         <ShoppingCartIcon
           style={{ color: 'white', fontSize: 50, cursor: 'pointer' }}
           onClick={() => setIsCartOpen(true)}
+          className='shopping-cart-icon'
         />
       </Badge>
 
@@ -126,6 +127,7 @@ const Home = () => {
           handleAddItemToTheCart={handleAddItemToTheCart}
           handleRemoveItemFromTheCart={handleRemoveItemFromTheCart}
           handleClearShoppingCart={handleClearShoppingCart}
+          setIsCartOpen={setIsCartOpen}
         />
       </Drawer>
 
@@ -142,7 +144,7 @@ const Home = () => {
           <>
             {/* Fetched Data from api */}
             {data?.map((item) => (
-              <Grid item key={item.id} xs={12} sm={4} height='100'>
+              <Grid item key={item.id} xs={12}  sm={12}  md={4} height='100'>
                 <CardItem
                   item={item}
                   handleAddItemToTheCart={handleAddItemToTheCart}

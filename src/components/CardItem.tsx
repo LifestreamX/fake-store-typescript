@@ -23,10 +23,10 @@ const CardItem: React.FC<Props> = ({ item, handleAddItemToTheCart }) => (
       className='images'
     />
     <CardContent>
-      <Typography gutterBottom variant='h5' component='div'>
+      <Typography gutterBottom variant='h5' component='div' className='item-title'>
         {item.title}
       </Typography>
-      <Typography variant='body2' color='text.secondary' style={{marginBottom:30, marginTop: 30}}>
+      <Typography variant='body2' color='text.secondary' style={{marginBottom:30, marginTop: 30}} className='item-desc'>
         {item.description}
       </Typography>
       <Typography variant='body2' color='text.secondary' className='price-text'>
