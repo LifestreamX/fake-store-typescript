@@ -1,23 +1,9 @@
-import { useQuery, useMutation } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
-// import { getProducts } from './api/storeApi';
 import CardItem from '../components/CardItem';
-import {
-  Badge,
-  CircularProgress,
-  Drawer,
-  Grid,
-  LinearProgress,
-} from '@mui/material';
-import { grey } from '@mui/material/colors';
+import { Badge, Drawer, Grid, LinearProgress } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Cart from '../components/Cart';
-
-// xs, extra-small: 0px
-// sm, small: 600px
-// md, medium: 900px
-// lg, large: 1200px
-// xl, extra-large: 1536px
 
 // Types
 export type itemType = {
@@ -41,14 +27,13 @@ const Home = () => {
 
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [itemsInCart, setItemsInCart] = useState([] as itemType[]);
-  const { data, isLoading, error } = useQuery<itemType[]>(
+  const { data, isLoading } = useQuery<itemType[]>(
     ['products'],
     getProducts
   );
 
   useEffect(() => {
     setItemsInCart(JSON.parse(cartData));
-    console.log(cartData);
   }, []);
 
   // Local Storage setter
@@ -79,7 +64,6 @@ const Home = () => {
   // Modal clear shopping cart
   const handleClearShoppingCart = () => {
     setItemsInCart([]);
-    console.log('fsf')
   };
 
   // Removing a item from the cart
@@ -144,7 +128,7 @@ const Home = () => {
           <>
             {/* Fetched Data from api */}
             {data?.map((item) => (
-              <Grid item key={item.id} xs={12}  sm={12}  md={4} height='100'>
+              <Grid item key={item.id} xs={12} sm={12} md={4} height='100'>
                 <CardItem
                   item={item}
                   handleAddItemToTheCart={handleAddItemToTheCart}
