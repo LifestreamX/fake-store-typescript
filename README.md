@@ -3,7 +3,7 @@
 - React-query
 - Material Ui
 - Fake-store Api
-- axios
+
 
 
 - Context API
