@@ -27,10 +27,7 @@ const Home = () => {
 
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [itemsInCart, setItemsInCart] = useState([] as itemType[]);
-  const { data, isLoading } = useQuery<itemType[]>(
-    ['products'],
-    getProducts
-  );
+  const { data, isLoading } = useQuery<itemType[]>(['products'], getProducts);
 
   useEffect(() => {
     setItemsInCart(JSON.parse(cartData));
@@ -84,6 +81,8 @@ const Home = () => {
   const getItemCount = (items: itemType[]) => {
     return items.reduce((acc: number, item) => acc + item.amount, 0);
   };
+
+  console.log(data)
 
   return (
     <main>
