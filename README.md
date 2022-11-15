@@ -4,7 +4,7 @@ Fake Store
 
 ## Demo link:
 
-<!-- Access my site at [google.com](https://google.com) -->
+<!-- Access my site at https://nbaplayerdatabase.tyler-allen.com/ -->
 
 ## About The App
 
