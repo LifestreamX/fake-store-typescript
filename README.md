@@ -4,7 +4,7 @@ Fake Store
 
 
 
- Access my site at https://fakestore.tyler-allen.com/
+ Access my site at https://fakestore.tyler-allen.com
 
 ## About The App
 
