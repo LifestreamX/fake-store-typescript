@@ -2,7 +2,7 @@
 
 Fake Store 
 
-## Demo link:
+## Demo link: https://fakestore.tyler-allen.com/
 
 <!-- Access my site at https://nbaplayerdatabase.tyler-allen.com/ -->
 
