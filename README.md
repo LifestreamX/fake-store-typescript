@@ -2,9 +2,9 @@
 
 Fake Store 
 
-## Demo link:
 
-<!-- Access my site at https://nbaplayerdatabase.tyler-allen.com/ -->
+
+ Access my site at https://fakestore.tyler-allen.com
 
 ## About The App
 
