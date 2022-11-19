@@ -274,3 +274,18 @@ body {
 
   /* Shopping cart */
 }
+
+@media screen and (max-width: 480px) {
+  /* Header */
+  .shop-wrapper {
+    text-align: center;
+    padding: 1rem;
+  }
+
+ 
+  .shop-wrapper h1 {
+    font-size: 1.2rem;
+  }
+
+ 
+}
