@@ -10,7 +10,7 @@ type Props = {
   handleAddItemToTheCart: (clickedItem: itemType) => void;
   handleRemoveItemFromTheCart: (id: number) => void;
   handleClearShoppingCart: (arg0: any) => void;
-  setIsCartOpen: (arg0: any) => void;
+  setIsCartOpen: (arg0: boolean) => void;
 };
 
 const Cart: React.FC<Props> = ({

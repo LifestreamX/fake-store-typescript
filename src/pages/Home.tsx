@@ -25,7 +25,7 @@ const getProducts = async (): Promise<itemType[]> =>
 const Home = () => {
   const cartData: any = window.localStorage.getItem('cart-info');
 
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
   const [itemsInCart, setItemsInCart] = useState([] as itemType[]);
   const { data, isLoading } = useQuery<itemType[]>(['products'], getProducts);
 
@@ -82,7 +82,7 @@ const Home = () => {
     return items.reduce((acc: number, item) => acc + item.amount, 0);
   };
 
-  console.log(data)
+  console.log(data);
 
   return (
     <main>
