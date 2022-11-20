@@ -27,7 +27,7 @@ const Cart: React.FC<Props> = ({
   return (
     <main className='cart-wrapper'>
       <div className='title-close-cart-wrapper '>
-        <h1>My Shopping Cart</h1>
+        <h1 className='shopping-cart-title'>My Shopping Cart</h1>
         <RemoveShoppingCartIcon
           className='cart-close-icon'
           onClick={() => setIsCartOpen(false)}
