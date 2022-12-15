@@ -14,7 +14,7 @@ type Props = {
 };
 
 const CardItem: React.FC<Props> = ({ item, handleAddItemToTheCart }) => (
-  <Card   className='card'>
+  <Card className='card'>
     <CardMedia
       component='img'
       image={item.image}
@@ -23,10 +23,20 @@ const CardItem: React.FC<Props> = ({ item, handleAddItemToTheCart }) => (
       className='images'
     />
     <CardContent>
-      <Typography gutterBottom variant='h5' component='div' className='item-title'>
+      <Typography
+        gutterBottom
+        variant='h5'
+        component='div'
+        className='item-title'
+      >
         {item.title}
       </Typography>
-      <Typography variant='body2' color='text.secondary' style={{marginBottom:30, marginTop: 30}} className='item-desc'>
+      <Typography
+        variant='body2'
+        color='text.secondary'
+        style={{ marginBottom: 30, marginTop: 30 }}
+        className='item-desc'
+      >
         {item.description}
       </Typography>
       <Typography variant='body2' color='text.secondary' className='price-text'>
@@ -41,7 +51,7 @@ const CardItem: React.FC<Props> = ({ item, handleAddItemToTheCart }) => (
         onClick={() => handleAddItemToTheCart(item)}
         className='purchase-button'
       >
-        Purchase
+        Add To Cart
       </Button>
     </CardActions>
   </Card>

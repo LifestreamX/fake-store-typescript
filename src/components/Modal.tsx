@@ -55,7 +55,7 @@ const TransitionsModal: React.FC<Props> = ({ handleClearShoppingCart }) => {
               CLEAR CART{' '}
             </Typography>
             <Typography id='transition-modal-description' sx={{ mt: 2 }}>
-              Are you sure you clear your entire shopping cart?{' '}
+              Are you sure you want to clear your entire shopping cart?{' '}
             </Typography>
 
             <div className='modal-button-wrapper'>
@@ -70,7 +70,7 @@ const TransitionsModal: React.FC<Props> = ({ handleClearShoppingCart }) => {
                   handleClose();
                 }}
               >
-                DELETE
+                CONFIRM
               </Button>
             </div>
           </Box>
