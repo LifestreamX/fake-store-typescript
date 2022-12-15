@@ -13,7 +13,7 @@ Fake Store
 
 ## Screenshots
 
-![](screenshots/screenshot1.png)
+![](screenshots/fake-store-screenshot.png)
 ![](screenshots/screenshot2.png)
 
 
